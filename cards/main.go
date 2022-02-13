@@ -5,8 +5,10 @@ import "fmt"
 func main() {
 	// declareVariables()
 	// usingSlice()
-	// usingTypeDeck()
-	usingFile()
+	usingTypeDeck()
+	// usingFile()
+	// usingShuffle()
+
 }
 
 func declareVariables() {
@@ -53,6 +55,8 @@ func usingSlice() {
 
 func usingTypeDeck() {
 	cards := newDeck()
+	fmt.Println("\n CARDS -------->")
+	cards.print()
 
 	fmt.Println("\n 1st WAY -------->")
 	hand, remainingCards := deal(cards, 5)
@@ -76,8 +80,15 @@ func usingTypeDeck() {
 
 func usingFile() {
 	// cards := newDeck()
-	// cards.saveToFile("my_cards")
+	// err := cards.saveToFile("my_cards")
+	// fmt.Println(err)
 
 	cards := newDeckFromFile("my_cards")
+	cards.print()
+}
+
+func usingShuffle() {
+	cards := newDeck()
+	cards.shuffle()
 	cards.print()
 }
